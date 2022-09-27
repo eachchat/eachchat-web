@@ -250,10 +250,6 @@ module.exports = (env, argv) => {
                     loader: 'babel-loader',
                     options: {
                         cacheDirectory: true,
-                        plugins: [
-                            development && require.resolve('react-refresh/babel'),
-                        ].filter(Boolean),
-
                     },
                 },
                 {
