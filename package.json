@@ -55,14 +55,14 @@
     "analyse:unused-exports": "node ./scripts/analyse_unused_exports.js"
   },
   "dependencies": {
-    "@matrix-org/olm": "ssh://git@git.internal.yunify.com:dtd/matrix-org-olm.git",
+    "@matrix-org/olm": "./olm-3.2.12.tgz",
     "@matrix-org/react-sdk-module-api": "^0.0.3",
     "browser-request": "^0.3.3",
     "gfm.css": "^1.1.2",
     "jsrsasign": "^10.5.25",
     "katex": "^0.16.0",
-    "matrix-js-sdk": "ssh://git@git.internal.yunify.com:dtd/matrix-js-sdk.git",
-    "matrix-react-sdk": "ssh://git@git.internal.yunify.com:dtd/matrix-react-sdk.git",
+    "matrix-js-sdk": "github:matrix-org/matrix-js-sdk#develop",
+    "matrix-react-sdk": "link:../matrix-react-sdk",
     "matrix-widget-api": "^1.0.0",
     "prop-types": "^15.7.2",
     "react": "17.0.2",
