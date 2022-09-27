@@ -9,7 +9,7 @@ const TerserPlugin = require('terser-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const HtmlWebpackInjectPreload = require('@principalstudio/html-webpack-inject-preload');
 const SentryCliPlugin = require("@sentry/webpack-plugin");
-const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
+// const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
 
 dotenv.config();
 let ogImageUrl = process.env.RIOT_OG_IMAGE_URL;
@@ -643,7 +643,7 @@ module.exports = (env, argv) => {
                     },
                 }),
             new webpack.EnvironmentPlugin(['VERSION']),
-            development && new ReactRefreshWebpackPlugin(),
+            // development && new ReactRefreshWebpackPlugin(),
         ].filter(Boolean),
 
         output: {

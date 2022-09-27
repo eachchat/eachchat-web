@@ -1686,9 +1686,9 @@
   resolved "https://registry.yarnpkg.com/@matrix-org/analytics-events/-/analytics-events-0.2.0.tgz#453925c939ecdd5ca6c797d293deb8cf0933f1b8"
   integrity sha512-+0/Sydm4MNOcqd8iySJmojVPB74Axba4BXlwTsiKmL5fgYqdUkwmqkO39K7Pn8i+a+8pg11oNvBPkpWs3O5Qww==
 
-"@matrix-org/olm@https://gitlab.matrix.org/api/v4/projects/27/packages/npm/@matrix-org/olm/-/@matrix-org/olm-3.2.12.tgz":
+"@matrix-org/olm@./olm-3.2.12.tgz":
   version "3.2.12"
-  resolved "https://gitlab.matrix.org/api/v4/projects/27/packages/npm/@matrix-org/olm/-/@matrix-org/olm-3.2.12.tgz#0bce3c86f9d36a4984d3c3e07df1c3fb4c679bd9"
+  resolved "./olm-3.2.12.tgz#0bce3c86f9d36a4984d3c3e07df1c3fb4c679bd9"
 
 "@matrix-org/react-sdk-module-api@^0.0.3":
   version "0.0.3"
@@ -1831,18 +1831,6 @@
   integrity sha512-eJ2jbzjdijiL3B4PrSQaSjuF2sPEQPVCPzBvTHJD9Nz+9dw2SGH4K4xeQJ77YfTq5bRQ+bD8wT11JbeDPmxmGg==
   dependencies:
     "@octokit/openapi-types" "^12.11.0"
-
-"@pmmmwh/react-refresh-webpack-plugin@^0.4.3":
-  version "0.4.3"
-  resolved "https://registry.npmmirror.com/@pmmmwh/react-refresh-webpack-plugin/-/react-refresh-webpack-plugin-0.4.3.tgz#1eec460596d200c0236bf195b078a5d1df89b766"
-  integrity sha512-br5Qwvh8D2OQqSXpd1g/xqXKnK0r+Jz6qVKBbWmpUcrbGOxUrf39V5oZ1876084CGn18uMdR5uvPqBv9UqtBjQ==
-  dependencies:
-    ansi-html "^0.0.7"
-    error-stack-parser "^2.0.6"
-    html-entities "^1.2.1"
-    native-url "^0.2.6"
-    schema-utils "^2.6.5"
-    source-map "^0.7.3"
 
 "@principalstudio/html-webpack-inject-preload@^1.2.7":
   version "1.2.7"
@@ -2752,11 +2740,6 @@ ansi-html-community@0.0.8:
   version "0.0.8"
   resolved "https://registry.yarnpkg.com/ansi-html-community/-/ansi-html-community-0.0.8.tgz#69fbc4d6ccbe383f9736934ae34c3f8290f1bf41"
   integrity sha512-1APHAyr3+PCamwNw3bXCPp4HFLONZt/yIH0sZp0/469KWNTEy+qN5jQ3GVX6DMZ1UXAi34yVwtTeaG/HpBuuzw==
-
-ansi-html@^0.0.7:
-  version "0.0.7"
-  resolved "https://registry.npmmirror.com/ansi-html/-/ansi-html-0.0.7.tgz#813584021962a9e9e6fd039f940d12f56ca7859e"
-  integrity sha512-JoAxEa1DfP9m2xfB/y2r/aKcwXNlltr4+0QSBC4TrLfcxyvepX2Pv0t/xpgGV5bGsDzCYV8SzjWgyCW0T9yYbA==
 
 ansi-regex@^2.0.0:
   version "2.1.1"
@@ -5247,13 +5230,6 @@ error-ex@^1.3.1:
   dependencies:
     is-arrayish "^0.2.1"
 
-error-stack-parser@^2.0.6:
-  version "2.1.4"
-  resolved "https://registry.npmmirror.com/error-stack-parser/-/error-stack-parser-2.1.4.tgz#229cb01cdbfa84440bfa91876285b94680188286"
-  integrity sha512-Sk5V6wVazPhq5MhpO+AUxJn5x7XSXGl1R93Vn7i+zS15KDVxQijejNCrz8340/2bgLBjR9GtEG8ZVKONDjcqGQ==
-  dependencies:
-    stackframe "^1.3.4"
-
 es-abstract@^1.17.2, es-abstract@^1.20.1:
   version "1.20.1"
   resolved "https://registry.yarnpkg.com/es-abstract/-/es-abstract-1.20.1.tgz#027292cd6ef44bd12b1913b828116f54787d1814"
@@ -6758,7 +6734,7 @@ html-encoding-sniffer@^3.0.0:
   dependencies:
     whatwg-encoding "^2.0.0"
 
-html-entities@^1.2.1, html-entities@^1.3.1, html-entities@^1.4.0:
+html-entities@^1.3.1, html-entities@^1.4.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/html-entities/-/html-entities-1.4.0.tgz#cfbd1b01d2afaf9adca1b10ae7dffab98c71d2dc"
   integrity sha512-8nxjcBcd8wovbeKx7h3wTji4e6+rhaVuPNpMqwWgnHh+N9ToqsCs6XztWRBPQ+UtzsoMAdKZtUENoVzU/EMtZA==
@@ -8564,13 +8540,9 @@ matrix-events-sdk@^0.0.1-beta.7:
   resolved "https://registry.yarnpkg.com/matrix-events-sdk/-/matrix-events-sdk-0.0.1-beta.7.tgz#5ffe45eba1f67cc8d7c2377736c728b322524934"
   integrity sha512-9jl4wtWanUFSy2sr2lCjErN/oC8KTAtaeaozJtrgot1JiQcEI4Rda9OLgQ7nLKaqb4Z/QUx/fR3XpDzm5Jy1JA==
 
-"matrix-js-sdk@link:../matrix-js-sdk":
-  version "0.0.0"
-  uid ""
-
-"matrix-js-sdk@ssh://git@git.internal.yunify.com:dtd/matrix-js-sdk.git":
-  version "19.7.0"
-  resolved "ssh://git@git.internal.yunify.com:dtd/matrix-js-sdk.git#281bec135cdf2511adb92c8e3093228af61f76dd"
+"matrix-js-sdk@github:matrix-org/matrix-js-sdk#develop":
+  version "19.5.0"
+  resolved "https://codeload.github.com/matrix-org/matrix-js-sdk/tar.gz/efbf5479d1e6b6dc087d8a4af33bf94be150f87a"
   dependencies:
     "@babel/runtime" "^7.12.5"
     another-json "^0.2.0"
@@ -8591,77 +8563,9 @@ matrix-mock-request@^2.0.0:
   dependencies:
     expect "^28.1.0"
 
-"matrix-react-sdk@ssh://git@git.internal.yunify.com:dtd/matrix-react-sdk.git":
-  version "3.54.0"
-  resolved "ssh://git@git.internal.yunify.com:dtd/matrix-react-sdk.git#dae63091be2d4f02a6ac6f9345bed0719969737d"
-  dependencies:
-    "@babel/runtime" "^7.12.5"
-    "@formily/antd" "1.x"
-    "@formily/antd-components" "^1.3.17"
-    "@matrix-org/analytics-events" "^0.2.0"
-    "@matrix-org/react-sdk-module-api" "^0.0.3"
-    "@sentry/browser" "^6.11.0"
-    "@sentry/tracing" "^6.11.0"
-    "@testing-library/react" "^12.1.5"
-    "@types/geojson" "^7946.0.8"
-    antd "^4.23.1"
-    await-lock "^2.1.0"
-    axios "^0.27.2"
-    blurhash "^1.1.3"
-    browser-request "^0.3.3"
-    cheerio "^1.0.0-rc.9"
-    classnames "^2.2.6"
-    commonmark "^0.29.3"
-    counterpart "^0.18.6"
-    diff-dom "^4.2.2"
-    diff-match-patch "^1.0.5"
-    emojibase "6.0.2"
-    emojibase-data "7.0.0"
-    emojibase-regex "6.0.0"
-    escape-html "^1.0.3"
-    file-saver "^2.0.5"
-    filesize "6.1.0"
-    flux "2.1.1"
-    focus-visible "^5.2.0"
-    gfm.css "^1.1.2"
-    glob-to-regexp "^0.4.1"
-    highlight.js "^11.3.1"
-    html-entities "^1.4.0"
-    is-ip "^3.1.0"
-    jszip "^3.7.0"
-    katex "^0.12.0"
-    linkify-element "4.0.0-beta.4"
-    linkify-string "4.0.0-beta.4"
-    linkifyjs "4.0.0-beta.4"
-    lodash "^4.17.20"
-    maplibre-gl "^1.15.2"
-    matrix-encrypt-attachment "^1.0.3"
-    matrix-events-sdk "^0.0.1-beta.7"
-    matrix-js-sdk "link:../../../../../Library/Caches/Yarn/v6/npm-matrix-react-sdk-3.54.0-dae63091be2d4f02a6ac6f9345bed0719969737d/node_modules/matrix-js-sdk"
-    matrix-widget-api "^1.0.0"
-    minimist "^1.2.5"
-    moment "^2.29.4"
-    opus-recorder "^8.0.3"
-    pako "^2.0.3"
-    parse5 "^6.0.1"
-    png-chunks-extract "^1.0.0"
-    posthog-js "1.12.2"
-    prop-types "^15.7.2"
-    qrcode "1.4.4"
-    re-resizable "^6.9.0"
-    react "17.0.2"
-    react-beautiful-dnd "^13.1.0"
-    react-blurhash "^0.1.3"
-    react-dom "17.0.2"
-    react-focus-lock "^2.5.1"
-    react-transition-group "^4.4.1"
-    rfc4648 "^1.4.0"
-    sanitize-html "^2.3.2"
-    styled-components "^5.3.5"
-    tar-js "^0.3.0"
-    url "^0.11.0"
-    what-input "^5.2.10"
-    zxcvbn "^4.4.2"
+"matrix-react-sdk@link:../matrix-react-sdk":
+  version "0.0.0"
+  uid ""
 
 matrix-react-test-utils@^0.2.3:
   version "0.2.3"
@@ -9078,13 +8982,6 @@ nanomatch@^1.2.9:
     regex-not "^1.0.0"
     snapdragon "^0.8.1"
     to-regex "^3.0.1"
-
-native-url@^0.2.6:
-  version "0.2.6"
-  resolved "https://registry.npmmirror.com/native-url/-/native-url-0.2.6.tgz#ca1258f5ace169c716ff44eccbddb674e10399ae"
-  integrity sha512-k4bDC87WtgrdD362gZz6zoiXQrl40kYlBmpfmSjwRO1VU0V5ccwJTlxuE72F6m3V0vc1xOf6n3UCP9QyerRqmA==
-  dependencies:
-    querystring "^0.2.0"
 
 natural-compare@^1.4.0:
   version "1.4.0"
@@ -10816,11 +10713,6 @@ querystring@0.2.0:
   resolved "https://registry.yarnpkg.com/querystring/-/querystring-0.2.0.tgz#b209849203bb25df820da756e747005878521620"
   integrity sha512-X/xY82scca2tau62i9mDyU9K+I+djTMUsvwf7xnUX5GLvVzgJybOJf4Y6o9Zx3oJK/LSXg5tTZBjwzqVPaPO2g==
 
-querystring@^0.2.0:
-  version "0.2.1"
-  resolved "https://registry.npmmirror.com/querystring/-/querystring-0.2.1.tgz#40d77615bb09d16902a85c3e38aa8b5ed761c2dd"
-  integrity sha512-wkvS7mL/JMugcup3/rMitHmd9ecIGd2lhFhK9N3UUQ450h66d1r3Y9nvXzQAW1Lq+wyx61k/1pfKS5KuKiyEbg==
-
 querystringify@^2.1.1:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/querystringify/-/querystringify-2.2.0.tgz#3345941b4153cb9d082d8eee4cda2016a9aef7f6"
@@ -12369,11 +12261,6 @@ stack-utils@^2.0.3:
   integrity sha512-xrQcmYhOsn/1kX+Vraq+7j4oE2j/6BFscZ0etmYg81xuM8Gq0022Pxb8+IqgOFUIaxHs0KaSb7T1+OegiNrNFA==
   dependencies:
     escape-string-regexp "^2.0.0"
-
-stackframe@^1.3.4:
-  version "1.3.4"
-  resolved "https://registry.npmmirror.com/stackframe/-/stackframe-1.3.4.tgz#b881a004c8c149a5e8efef37d51b16e412943310"
-  integrity sha512-oeVtt7eWQS+Na6F//S4kJ2K2VbRlS9D43mAlMyVpVWovy9o+jfgH8O9agzANzaiLjclA0oYzUXEM4PurhSUChw==
 
 static-extend@^0.1.1:
   version "0.1.2"
