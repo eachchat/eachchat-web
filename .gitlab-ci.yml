@@ -16,7 +16,7 @@ build:
   script: 
   - $ENV dos2unix scripts/docker-link-repos.sh && bash scripts/docker-link-repos.sh
   - yarn --network-timeout=100000 install
-  - yarn build
+  - dos2unix scripts/docker-package.sh && bash /scripts/docker-package.sh
   - IMAGE_TAG="v$(date "+%Y%m%d")-$(git rev-parse --short HEAD)"
   - docker build -f Dockerfile.ci -t "$IMAGE_PREFIX/$PROJECT_NAME:$IMAGE_TAG" .
   - docker push "$IMAGE_PREFIX/$PROJECT_NAME:$IMAGE_TAG"
