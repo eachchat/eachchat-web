@@ -13,7 +13,7 @@ build:
     - master
     - alpha
   script: 
-  - export REACT_SDK_REPO=git@git.internal.yunify.com:dtd/matrix-react-sdk.git -w
+  - export REACT_SDK_REPO=git@git.internal.yunify.com:dtd/matrix-react-sdk.git
   - export REACT_SDK_REPO=master
   - export JS_SDK_REPO=git@git.internal.yunify.com:dtd/matrix-js-sdk.git
   - export JS_SDK_BRANCH=master
