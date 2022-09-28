@@ -3,13 +3,6 @@ variables:
   IMAGE_PREFIX: qxcr.io/dtd
   ALPHA_NAMESPACE: matrix
 
-before_script:
-- export REACT_SDK_REPO=git@git.internal.yunify.com:dtd/matrix-react-sdk.git
-- export REACT_SDK_REPO=master
-- export JS_SDK_REPO=git@git.internal.yunify.com:dtd/matrix-js-sdk.git
-- export JS_SDK_BRANCH=master
-- export USE_CUSTOM_SDKS=true
-
 stages:
   - build
   - deploy
@@ -20,6 +13,11 @@ build:
     - master
     - alpha
   script: 
+  - export REACT_SDK_REPO=git@git.internal.yunify.com:dtd/matrix-react-sdk.git -w
+  - export REACT_SDK_REPO=master
+  - export JS_SDK_REPO=git@git.internal.yunify.com:dtd/matrix-js-sdk.git
+  - export JS_SDK_BRANCH=master
+  - export USE_CUSTOM_SDKS=true
   - dos2unix scripts/docker-link-repos.sh && bash scripts/docker-link-repos.sh
   - yarn --network-timeout=100000 install
   - dos2unix scripts/docker-package.sh && bash scripts/docker-package.sh
