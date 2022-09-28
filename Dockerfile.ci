@@ -1,7 +1,7 @@
 # App
 FROM nginx:alpine
 
-RUN cp webapp /app
+COPY webapp /app
 
 RUN rm -rf /usr/share/nginx/html \
   && ln -s /app /usr/share/nginx/html
