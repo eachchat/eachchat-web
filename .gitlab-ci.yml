@@ -4,12 +4,6 @@ variables:
   ALPHA_NAMESPACE: matrix
   ENV: "REACT_SDK_REPO=git@git.internal.yunify.com:dtd/matrix-react-sdk.git REACT_SDK_REPO=master JS_SDK_REPO=git@git.internal.yunify.com:dtd/matrix-js-sdk.git JS_SDK_BRANCH=master  USE_CUSTOM_SDKS=true"
 
-
-before_script:
-  - mkdir src-tmp
-  - mv $(ls |grep -v src-tmp) src-tmp/
-  - mv  src-tmp src
-
 stages:
   - build
   - deploy
@@ -20,9 +14,9 @@ build:
     - master
     - alpha
   script: 
-  - $ENV dos2unix src/scripts/docker-link-repos.sh && bash src/scripts/docker-link-repos.sh
+  - $ENV dos2unix scripts/docker-link-repos.sh && bash scripts/docker-link-repos.sh
   - yarn --network-timeout=100000 install
-  - dos2unix src/scripts/docker-package.sh && bash src/scripts/docker-package.sh
+  - dos2unix scripts/docker-package.sh && bash scripts/docker-package.sh
   - IMAGE_TAG="v$(date "+%Y%m%d")-$(git rev-parse --short HEAD)"
   - docker build -f Dockerfile.ci -t "$IMAGE_PREFIX/$PROJECT_NAME:$IMAGE_TAG" .
   - docker push "$IMAGE_PREFIX/$PROJECT_NAME:$IMAGE_TAG"
