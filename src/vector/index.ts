@@ -177,7 +177,8 @@ async function start() {
         // ##########################
         // error handling begins here
         // ##########################
-        if (!acceptBrowser) {
+        const disShowIncompatibleBrowser = localStorage.getItem('mx_dis_show_incompatible_browser')
+        if (!disShowIncompatibleBrowser && !acceptBrowser) {
             await new Promise<void>(resolve => {
                 logger.error("Browser is missing required features.");
                 // take to a different landing page to AWOOOOOGA at the user
