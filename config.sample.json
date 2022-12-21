@@ -40,7 +40,9 @@
     },
     "setting_defaults": {
         "breadcrumbs": true,
-        "language": "zh-hans"
+        "language": "zh-hans",
+        "contact_robot_name":"@foremanbot:dendrite.yunify.com",
+        "show_register":true
     },
     "jitsi": {
         "preferred_domain": "meet.element.io"
