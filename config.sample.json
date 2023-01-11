@@ -42,7 +42,19 @@
         "breadcrumbs": true,
         "language": "zh-hans",
         "contact_robot_name":"@foremanbot:dendrite.yunify.com",
-        "show_register":true
+        "show_register":true,
+        "dis_login_password":false,
+        "dis_encryption":true,
+        "dis_feedback":true,
+        "dis_create_space":true,
+        "dis_show_stickers_button":true,
+        "dis_widgets":true,
+        "dis_sidebar":true,
+        "dis_labs":true,
+        "dis_help":true,
+        "dis_show_incompatible_browser":true,
+        "dis_verify_identity": true
+
     },
     "jitsi": {
         "preferred_domain": "meet.element.io"
