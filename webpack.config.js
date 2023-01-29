@@ -668,6 +668,13 @@ module.exports = (env, argv) => {
             stats: 'minimal',
             hotOnly: true,
             inline: true,
+            proxy: {
+                '/api':{
+                    target:'https://matrix.yunify.com/',
+                    changeOrigin: true,
+                    secure:false,
+                }
+            }
         },
     };
 };
