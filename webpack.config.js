@@ -670,10 +670,26 @@ module.exports = (env, argv) => {
             inline: true,
             proxy: {
                 '/api':{
-                    target:'https://matrix.yunify.com/',
+                    target:'http://matrix.clouden.io/',
+                    changeOrigin: true,
+                    // secure:false,
+                },
+                '/element':{
+                    target:'http://matrix.clouden.io/',
+                    changeOrigin: true,
+                    // secure:false,
+                    pathRewrite: {
+                        '^/element': '' 
+                    }
+                },
+                '/nextCloud':{
+                    target:'http://nextcloud.clouden.io/',
                     changeOrigin: true,
                     secure:false,
-                }
+                    pathRewrite: {
+                        '^/nextCloud': '' 
+                    }
+                },
             }
         },
     };
