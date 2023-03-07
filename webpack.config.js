@@ -10,6 +10,7 @@ const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const HtmlWebpackInjectPreload = require("@principalstudio/html-webpack-inject-preload");
 const SentryCliPlugin = require("@sentry/webpack-plugin");
 const crypto = require("crypto");
+const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
 
 // XXX: mangle Crypto::createHash to replace md4 with sha256, output.hashFunction is insufficient as multiple bits
 // of webpack hardcode md4. The proper fix it to upgrade to webpack 5.
@@ -667,6 +668,7 @@ module.exports = (env, argv) => {
                     },
                 }),
             new webpack.EnvironmentPlugin(["VERSION"]),
+            development && new ReactRefreshWebpackPlugin(),
         ].filter(Boolean),
 
         output: {
@@ -696,8 +698,8 @@ module.exports = (env, argv) => {
             inline: true,
             proxy: {
                 '/element':{
-                    // target:'http://matrix.clouden.io/',
-                    target:'https://matrix.yunify.com/',
+                    target:'http://matrix.clouden.io/',
+                    // target:'https://matrix.yunify.com/',
                     // secure:false,
                     changeOrigin: true,
                     pathRewrite: {
@@ -705,8 +707,8 @@ module.exports = (env, argv) => {
                     }
                 },
                 '/nextCloud':{
-                    // target:'http://nextcloud.clouden.io/',
-                    target:'https://box.yunify.com/',
+                    target:'http://nextcloud.clouden.io/',
+                    // target:'https://box.yunify.com/',
                     // secure:false,
                     changeOrigin: true,
                     pathRewrite: {
