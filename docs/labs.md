@@ -4,6 +4,9 @@ If Labs is enabled in the [Element config](config.md), you can enable some of th
 to `Settings->Labs`. This list is non-exhaustive and subject to change, chat in
 [#element-web:matrix.org](https://matrix.to/#/#element-web:matrix.org) for more information.
 
+If a labs features gets more stable, it _may_ be promoted to a beta feature
+(see [Betas](https://github.com/vector-im/element-web/blob/develop/docs/betas.md)).
+
 **Be warned! Labs features are not finalised, they may be fragile, they may change, they may be
 dropped. Ask in the room if you are unclear about any details here.**
 
@@ -119,7 +122,7 @@ Switches to a new room search experience.
 
 ## Extensible events rendering (`feature_extensible_events`) [In Development]
 
-*Intended for developer use only at the moment.*
+_Intended for developer use only at the moment._
 
 Extensible Events are a [new event format](https://github.com/matrix-org/matrix-doc/pull/1767) which
 supports graceful fallback in unknown event types. Instead of rendering nothing or a blank space, events
@@ -142,25 +145,25 @@ If no right panel state is known for the room or it was closed on the last room
 visit, it will default to the room member list. Otherwise, the saved card last
 used in that room is shown.
 
-## Pin drop location sharing (`feature_location_share_pin_drop`) [In Development]
-
-Enables sharing a pin drop location to the timeline.
-
 ## Live location sharing (`feature_location_share_live`) [In Development]
 
 Enables sharing your current location to the timeline, with live updates.
 
-## Threaded Messaging (`feature_thread`)
-
-Threading allows users to branch out a new conversation from the main timeline of a room. This is particularly useful in high traffic rooms where multiple conversations can happen in parallel or when a single discussion might stretch over a very long period of time.
-
-Threads can be access by clicking their summary below the root event on the room timeline. Users can find a comprehensive list of threads by click the icon on the room header button.
-
-This feature might work in degraded mode if the homeserver a user is connected to does not advertise support for the unstable feature `org.matrix.msc3440`  when calling the `/versions` API endpoint.
-
 ## Video rooms (`feature_video_rooms`)
 
 Enables support for creating and joining video rooms, which are persistent video chats that users can jump in and out of.
+
+## Element Call video rooms (`feature_element_call_video_rooms`) [In Development]
+
+Enables support for video rooms that use Element Call rather than Jitsi, and causes the 'New video room' option to create Element Call video rooms rather than Jitsi ones.
+
+This flag will not have any effect unless `feature_video_rooms` is also enabled.
+
+## New group call experience (`feature_group_calls`) [In Development]
+
+This feature allows users to place and join native [MSC3401](https://github.com/matrix-org/matrix-spec-proposals/pull/3401) group calls in compatible rooms, using Element Call.
+
+If you're enabling this at the deployment level, you may also want to reference the docs for the `element_call` config section.
 
 ## Rich text in room topics (`feature_html_topic`) [In Development]
 
@@ -174,3 +177,13 @@ have [MSC3827](https://github.com/matrix-org/matrix-spec-proposals/pull/3827) en
 ## Favourite Messages (`feature_favourite_messages`) [In Development]
 
 Enables users to bookmark a message or content for a later reference.
+
+## Sign in another device by showing a QR code (`feature_qr_signin_reciprocate_show`)
+
+Add capability to the session/device manager screens to generate a QR code to sign in another device + set up E2EE. This requires the homeserver to have support for [MSC3882](https://github.com/matrix-org/matrix-spec-proposals/pull/3882) and [MSC3886](https://github.com/matrix-org/matrix-spec-proposals/pull/3886) enabled.
+
+## Use the Rust cryptography implementation (`feature_rust_crypto`) [In Development]
+
+Configures Element to use a new cryptography implementation based on the [matrix-rust-sdk](https://github.com/matrix-org/matrix-rust-sdk).
+
+This setting is (currently) _sticky_ to a user's session: it only takes effect when the user logs in to a new session. Likewise, even after disabling the setting in `config.json`, the Rust implemention will remain in use until users log out.
