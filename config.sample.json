@@ -53,7 +53,7 @@
         "sso_change_password": true,
         "next_cloud_url": "http://nextcloud.clouden.io",
         "sso_url": "https://sso.yunify.com",
-        "robot_name": "@foreman:matrix.clouden.io",
+        "robot_id": "@foreman:matrix.clouden.io",
         "desktop_host": "http://element.clouden.io"
     },
     "embedded_pages": {
