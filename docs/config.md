@@ -320,7 +320,8 @@ The VoIP and Jitsi options are:
     }
     ```
     The `widget` is the `content` of a normal widget state event. The `layout` is the layout specifier for the widget being created,
-    as defined by the `io.element.widgets.layout` state event.
+    as defined by the `io.element.widgets.layout` state event. By default this applies to all rooms, but the behaviour can be skipped for DMs
+    by setting the option `widget_build_url_ignore_dm` to `true`.
 5. `audio_stream_url`: Optional URL to pass to Jitsi to enable live streaming. This option is considered experimental and may be removed
    at any time without notice.
 6. `element_call`: Optional configuration for native group calls using Element Call, with the following subkeys:
@@ -421,39 +422,6 @@ There are additional root-level options which can be specified:
    and is useful when the provider of analytics is different from the provider of the Element instance.
 2. `privacy_policy_url`: URL to the privacy policy including the analytics collection policy.
 
-## Server hosting links
-
-If you would like to encourage matrix.org users to sign up for a service like [Element Matrix Services](https://element.io/matrix-services/server-hosting),
-the following configuration options can be set. Note that if the options are missing from the configuration then the hosting prompts
-will not be shown to the user.
-
-1. `hosting_signup_link`: Optional URL to link the user to when talking about "Upgrading your account". Will contain a query parameter
-   of `utm_campaign` to denote which link the user clicked on within the app. Only ever applies to matrix.org users specifically.
-2. `host_signup`: Optional configuration for an account importer to your hosting platform. The API surface of this is not documented
-   at the moment, but can be configured with the following subproperties:
-    1. `brand`: The brand name to use.
-    2. `url`: The iframe URL for the importer.
-    3. `domains`: The homeserver domains to show the importer to.
-    4. `cookie_policy_url`: The URL to the cookie policy for the importer.
-    5. `privacy_policy_url`: The URL to the privacy policy for the importer.
-    6. `terms_of_service_url`: The URL to the terms of service for the importer.
-
-If you're looking to mirror a setup from our production/development environments, the following config should be used:
-
-```json
-{
-    "hosting_signup_link": "https://element.io/matrix-services?utm_source=element-web&utm_medium=web",
-    "host_signup": {
-        "brand": "Element Home",
-        "domains": ["matrix.org"],
-        "url": "https://ems.element.io/element-home/in-app-loader",
-        "cookie_policy_url": "https://element.io/cookie-policy",
-        "privacy_policy_url": "https://element.io/privacy",
-        "terms_of_service_url": "https://element.io/terms-of-service"
-    }
-}
-```
-
 ## Miscellaneous
 
 Element supports other options which don't quite fit into other sections of this document.
@@ -541,6 +509,7 @@ Currently, the following UI feature flags are supported:
     timeline for recent messages. When false day dates will be used.
 -   `UIFeature.BulkUnverifiedSessionsReminder` - Display popup reminders to verify or remove unverified sessions. Defaults
     to true.
+-   `UIFeature.locationSharing` - Whether or not location sharing menus will be shown.
 
 ## Undocumented / developer options
 
