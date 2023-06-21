@@ -8,7 +8,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const HtmlWebpackInjectPreload = require("@principalstudio/html-webpack-inject-preload");
-const SentryCliPlugin = require("@sentry/webpack-plugin");
+const { sentryWebpackPlugin } = require("@sentry/webpack-plugin");
 const crypto = require("crypto");
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
 
@@ -100,8 +100,8 @@ module.exports = (env, argv) => {
 
     const development = {};
     if (devMode) {
-        // High quality, embedded source maps for dev builds
-        development["devtool"] = "eval-source-map";
+        // Embedded source maps for dev builds, can't use eval-source-map due to CSP
+        development["devtool"] = "inline-source-map";
     } else {
         if (process.env.CI_PACKAGE) {
             // High quality source maps in separate .map files which include the source. This doesn't bulk up the .js
@@ -208,8 +208,10 @@ module.exports = (env, argv) => {
                 // Same goes for js/react-sdk - we don't need two copies.
                 "matrix-js-sdk": path.resolve(__dirname, "node_modules/matrix-js-sdk"),
                 "matrix-react-sdk": path.resolve(__dirname, "node_modules/matrix-react-sdk"),
-                // and sanitize-html
+                // and sanitize-html & matrix-events-sdk & matrix-widget-api
                 "sanitize-html": path.resolve(__dirname, "node_modules/sanitize-html"),
+                "matrix-events-sdk": path.resolve(__dirname, "node_modules/matrix-events-sdk"),
+                "matrix-widget-api": path.resolve(__dirname, "node_modules/matrix-widget-api"),
 
                 // Define a variable so the i18n stuff can load
                 "$webapp": path.resolve(__dirname, "webapp"),
@@ -659,9 +661,11 @@ module.exports = (env, argv) => {
 
             // upload to sentry if sentry env is present
             process.env.SENTRY_DSN &&
-                new SentryCliPlugin({
+                sentryWebpackPlugin({
                     release: process.env.VERSION,
-                    include: "./webapp/bundles",
+                    sourcemaps: {
+                        paths: "./webapp/bundles/**",
+                    },
                     errorHandler: (err, invokeErr, compilation) => {
                         compilation.warnings.push("Sentry CLI Plugin: " + err.message);
                         console.log(`::warning title=Sentry error::${err.message}`);
