@@ -53,10 +53,13 @@
         "show_side_bar": false,
         "sso_change_password": true,
         "next_cloud_url": "http://nextcloud.clouden.io",
-        "sso_url": "https://sso.yunify.com",
-        "robot_id": "@foreman:matrix.clouden.io",
-        "onlySSOLogin": ["chat.yunify.com"],
-        "desktop_host": "https://chat.yunify.com/"
+        "QingCloud": {
+            "desktop_host": "https://app.yunify.com/",
+            "onlySSOLogin": [{
+                "hostName": "chat.yunify.com",
+                "ssoUrl": "https://sso.yunify.com"
+            }]
+        }
     },
     "embedded_pages": {
         "login_for_welcome": true
