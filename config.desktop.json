@@ -39,24 +39,20 @@
     "setting_defaults": {
         "language": "zh-hans",
         "breadcrumbs": false,
+        "UIFeature.Feedback": false,
         "FTUE.userOnboardingButton": false,
         "UIFeature.registration": true,
         "UIFeature.deactivate": false,
         "SHOW_ENCRYPTION_SETUP_UI": false,
         "UIComponent.spaceCreation": false,
-        "dis_deactivate_account": true,
-        "dis_login_password":false,
-        "dis_encryption":false,
-        "dis_feedback":true,
-        "show_help_about":false,
-        "show_labs_settings":false,
-        "show_side_bar": false,
-        "sso_change_password": true,
-        "next_cloud_url": "http://nextcloud.clouden.io",
-        "sso_url": "https://sso.yunify.com",
-        "robot_id": "@foreman:matrix.clouden.io",
-        "onlySSOLogin": ["chat.yunify.com"],
-        "desktop_host": "https://chat.yunify.com/"
+        "next_cloud_url": "https://box.yunify.com",
+        "QingCloud": {
+            "desktop_host": "https://app.yunify.com/",
+            "onlySSOLogin": [{
+                "hostName": "chat.yunify.com",
+                "ssoUrl": "https://sso.yunify.com"
+            }]
+        }
     },
     "embedded_pages": {
         "login_for_welcome": true
