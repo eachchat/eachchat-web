@@ -68,5 +68,5 @@
         "brand": "Element Call"
      },
     "map_style_url": "https://api.maptiler.com/maps/streets/style.json?key=fU3vlMsMn4Jb6dnEIFsx",
-    "update_base_url": "http://localhost:3000"
+    "update_base_url": "https://packages.yiqia.com"
 }
