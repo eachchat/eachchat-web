@@ -700,20 +700,23 @@ module.exports = (env, argv) => {
             stats: "minimal",
             hotOnly: true,
             inline: true,
+            host: '0.0.0.0',
             proxy: {
                 '/element':{
-                    target:'http://matrix.clouden.io/',
-                    // target:'https://matrix.yunify.com/',
-                    // secure:false,
+                    target: 'https://app.yunify.com/element/',
+                    // target:'http://matrix.clouden.io/',
+                    // target:'https://chat.yunify.com/',
+                    secure:false,
                     changeOrigin: true,
                     pathRewrite: {
                         '^/element': '' 
                     }
                 },
                 '/nextCloud':{
-                    target:'http://nextcloud.clouden.io/',
+                    target: 'https://app.yunify.com/nextCloud/',
+                    // target:'http://nextcloud.clouden.io/',
                     // target:'https://box.yunify.com/',
-                    // secure:false,
+                    secure:false,
                     changeOrigin: true,
                     pathRewrite: {
                         '^/nextCloud': '' 
