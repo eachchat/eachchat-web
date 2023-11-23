@@ -53,7 +53,8 @@
                 "hostName": "chat.yunify.com",
                 "ssoUrl": "https://sso.yunify.com"
             }],
-            "next_cloud_url": "https://box.yunify.com/"
+            "next_cloud_url": "https://box.yunify.com/",
+            "next_cloud_email_suffix": "@yunify.com"
         }
     },
     "embedded_pages": {
